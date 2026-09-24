@@ -1,16 +1,9 @@
 from django.contrib import admin
 
-from .models import Product, Category
+from .models import pelicula
 
-
-@admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'price', 'category')
-    list_filter = ('category',)
-    search_fields = ('name', 'description')
-
-
-@admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name',)
-    search_fields = ('name',)
+@admin.register(pelicula)
+class PeliculaAdmin(admin.ModelAdmin):
+    list_display = ('titulo', 'director', 'fecha_lanzamiento')
+    list_filter = ('genero', 'clasificacion')
+    search_fields = ('titulo', 'descripcion')

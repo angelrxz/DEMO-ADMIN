@@ -1,18 +1,21 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-class Category(models.Model):
-    name = models.CharField(max_length=100)
+class pelicula(models.Model):
+    titulo = models.CharField(max_length=100)
+    descripcion = models.TextField()
+    fecha_lanzamiento = models.DateField()
+    duracion = models.IntegerField(help_text="Duración en minutos")
+    director = models.CharField(max_length=100)
+    genero = models.CharField(max_length=50)
+    clasificacion = models.CharField(max_length=10, choices=[
+        ('G', 'General'),
+        ('PG', 'Apto para todo público'),
+        ('PG-13', 'Apto para mayores de 13 años'),
+        ('R', 'Restringido'),
+        ('NC-17', 'No apto para menores de 17 años')
+    ])
+    
 
     def __str__(self):
-        return self.name
-
-class Product(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField()
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.name
+        return self.titulo
