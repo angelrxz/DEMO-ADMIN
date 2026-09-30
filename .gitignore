@@ -1,41 +1,9 @@
-# Python bytecode
-__pycache__/
-*.py[cod]
-*$py.class
 
-# Virtual environments
 .venv/
 venv/
-env/
-ENV/
+__pycache__/
 
-# Django
-*.log
-local_settings.py
-db.sqlite3
-/media/
-/static/
 
-# Environment files
-.env
-.env.*
 
-# IDE/editor files
-.vscode/
-.idea/
-*.swp
-*.swo
 
-# OS files
-.DS_Store
-Thumbs.db
 
-# Coverage/test artifacts
-.pytest_cache/
-.coverage
-htmlcov/
-
-# Build artifacts
-build/
-dist/
-*.egg-info/
