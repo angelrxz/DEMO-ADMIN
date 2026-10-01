@@ -4,6 +4,6 @@ from .models import pelicula
 
 @admin.register(pelicula)
 class PeliculaAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'director', 'fecha_lanzamiento')
-    list_filter = ('genero', 'clasificacion')
+    list_display = ('titulo', 'director', 'fecha_lanzamiento', 'duracion', 'genero', 'clasificacion', 'precio')
+    list_filter = ('genero', 'clasificacion', 'precio')
     search_fields = ('titulo', 'descripcion')

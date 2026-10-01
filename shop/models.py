@@ -15,6 +15,7 @@ class pelicula(models.Model):
         ('R', 'Restringido'),
         ('NC-17', 'No apto para menores de 17 años')
     ])
+    precio = models.DecimalField(max_digits=10, decimal_places=3, help_text="Precio en pesos chilenos")
     
 
     def __str__(self):
